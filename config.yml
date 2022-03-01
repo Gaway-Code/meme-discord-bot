@@ -1,0 +1,16 @@
+token: "" #Discord Bot token https://discord.com/developers/applications
+activity: "©Gaway-code" #Widoczna aktyność bota
+mysql: "false" #Pobieranie danych z mysql z tabeli memki kolumna link (jeżeli wyłaczone to pobiera dane z folderu memiki)
+admintag: "Gaway#4391" #Nick uprawniony do aktualizacji memów (z plików lub bazy)
+database: #dane do mysql
+  ip: ""
+  port: ""
+  database: ""
+  user: ""
+  pass: ""
+memetitle: "Codzienna dawka memów" #Tytuł przy wysyłaniu mema
+updatemessage: "Zaktualizowane liste memów" #wiadomość jaka wyswietla się po wykonaniu komendy aktualizującej memy
+permissionmessage: "Nie masz uprawnień" #Wiadomosc wysyłana do osoby bez uprawnień do aktualizacji
+memecommand: "!meme" #komenda do wysłania mema
+updatecommand: "!update" #komenda do aktualizacji mema
+
