@@ -1,8 +1,11 @@
 package pl.gaway;
 
 import com.github.jsixface.YamlConfig;
+import sun.nio.cs.UTF_32;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class Config {
     private String token;
@@ -86,8 +89,8 @@ public class Config {
 
     public static void generateConfig(){
         try {
-            FileWriter myWriter = new FileWriter("config.yml");
-            myWriter.write("token: \"\" #Discord Bot token https://discord.com/developers/applications\n" +
+            PrintWriter writer = new PrintWriter("config.yml", "UTF-8");
+            writer.print("token: \"\" #Discord Bot token https://discord.com/developers/applications\n" +
                     "activity: \"©Gaway-code\" #Widoczna aktyność bota\n" +
                     "mysql: \"false\" #Pobieranie danych z mysql z tabeli memki kolumna link (jeżeli wyłaczone to pobiera dane z folderu memiki)\n" +
                     "admintag: \"Gaway#4391\" #Nick uprawniony do aktualizacji memów (z plików lub bazy)\n" +
@@ -102,9 +105,9 @@ public class Config {
                     "permissionmessage: \"Nie masz uprawnień\" #Wiadomosc wysyłana do osoby bez uprawnień do aktualizacji\n" +
                     "memecommand: \"!meme\" #komenda do wysłania mema\n" +
                     "updatecommand: \"!update\" #komenda do aktualizacji mema\n" +
-                    "reloadcommand: \"!reload\" #komenda do aktualizacji mema\n" +
-                    "\n");
-            myWriter.close();
+                    "reloadcommand: \"!reload\" #komenda do przeładowania konfiguracji");
+
+            writer.close();
             System.out.println("plik config.yml został utworzony");
         } catch (IOException e) {
             System.out.println("Blad przy tworzeniu pliku config.yml");
