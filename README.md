@@ -6,7 +6,10 @@ Discord-meme-bot to szybki bot służący do wysyłania randomowych memów na ka
 ## Wrzucanie memów z różnych żródeł
 - Mysql (link  w bazie danych do mema)
 - Wrzucony plik w folder "memiki"
-##
+## komendy
+- !meme - wysłanie mema na kanał
+- !update - aktualizacja bazy memów
+- !reload - przeładowanie configu
 
 ## Demo
 
@@ -30,7 +33,7 @@ updatemessage: "Zaktualizowane liste memów" #wiadomość jaka wyswietla się po
 permissionmessage: "Nie masz uprawnień" #Wiadomosc wysyłana do osoby bez uprawnień do aktualizacji
 memecommand: "!meme" #komenda do wysłania mema
 updatecommand: "!update" #komenda do aktualizacji mema
-
+reloadcommand: "!reload"
 ```
 ## Biblioteki
 - yamlconfig
