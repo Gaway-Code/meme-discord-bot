@@ -30,10 +30,10 @@ public class main {
         GetConfig.loadConfig();
 
         JDA jda = JDABuilder.createDefault(GetConfig.Lang.get("token")).setActivity(Activity.watching(GetConfig.Lang.get("activity"))).build(); //budowanie bota
-        jda.addEventListener(new Listeners()); //dodanie listenera z komendami
-        if(GetConfig.Lang.get("mysql").equals("false")) {
-            listFilesForFolder(folder); //pobieranie memów z folderu memiki
-        }else {
+        jda.addEventListener(new Listeners());//dodanie listenera z komendami
+        listFilesForFolder(folder); //pobieranie memów z folderu memiki
+
+        if(!GetConfig.Lang.get("mysql").equals("true")) {
             try {
                 GetMysqlList.updateMeme(); //pobieranie memów z bazy
             } catch (SQLException throwables) {

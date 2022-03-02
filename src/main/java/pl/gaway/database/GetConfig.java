@@ -24,6 +24,6 @@ public class GetConfig {
         Lang.put("permissionmessage",c.getPermissionmessage());
         Lang.put("memecommand",c.getMemeCommand());
         Lang.put("updatecommand",c.getUpdatecommand());
-
+        Lang.put("reloadcommand",c.getReloadcommand());
     }
 }

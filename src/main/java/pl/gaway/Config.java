@@ -19,6 +19,7 @@ public class Config {
     private String permissionmessage;
     private String updatecommand;
     private String memecommand;
+    private String reloadcommand;
 
     public Config() throws FileNotFoundException {
         this.token = token;
@@ -35,6 +36,7 @@ public class Config {
         this.permissionmessage = permissionmessage;
         this.memecommand = memecommand;
         this.updatecommand = updatecommand;
+        this.reloadcommand = reloadcommand;
     }
     InputStream resource = new FileInputStream(new File("config.yml"));
     YamlConfig config = YamlConfig.load(resource);
@@ -78,6 +80,9 @@ public class Config {
     public String getUpdatecommand(){
         return this.updatecommand = config.getString("updatecommand");
     }
+    public String getReloadcommand(){
+        return this.updatecommand = config.getString("reloadcommand");
+    }
 
     public static void generateConfig(){
         try {
@@ -97,6 +102,7 @@ public class Config {
                     "permissionmessage: \"Nie masz uprawnień\" #Wiadomosc wysyłana do osoby bez uprawnień do aktualizacji\n" +
                     "memecommand: \"!meme\" #komenda do wysłania mema\n" +
                     "updatecommand: \"!update\" #komenda do aktualizacji mema\n" +
+                    "reloadcommand: \"!reload\" #komenda do aktualizacji mema\n" +
                     "\n");
             myWriter.close();
             System.out.println("plik config.yml został utworzony");

@@ -10,6 +10,7 @@ import pl.gaway.database.GetImgFile;
 import pl.gaway.database.GetMysqlList;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Random;
 
@@ -47,6 +48,25 @@ public class Listeners extends ListenerAdapter {
                     channel.sendMessage("Bład mysql - " + e.getMessage()).queue();
                 }
             }
+        }
+        if(msg.getContentRaw().equals(GetConfig.Lang.get("reloadcommand"))){
+            MessageChannel channel = event.getChannel();
+            if(!user.equals(GetConfig.Lang.get("admintag"))){
+                channel.sendMessage(GetConfig.Lang.get("permissionmessage")).queue();
+                return;
+            }
+            try {
+                GetConfig.loadConfig();
+                channel.sendMessage("Przeładowane!").queue();
+                if(GetConfig.Lang.get("mysql").equals("true")){
+                    GetMysqlList.updateMeme();
+                    return;
+                }
+            } catch (FileNotFoundException | SQLException e) {
+                e.printStackTrace();
+                channel.sendMessage("blad " + e.getMessage()).queue();
+            }
+
         }
     }
 }
