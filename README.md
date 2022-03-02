@@ -39,7 +39,8 @@ reloadcommand: "!reload"
 - yamlconfig
 - JDA
 - mysql-connector-java
-
+## Download
+https://github.com/Gaway-Code/meme-discord-bot/releases
 ### License
 MIT
 ## Autor
